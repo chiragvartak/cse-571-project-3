@@ -381,7 +381,7 @@ def with_manual_kb_program(agent):
         However, being satisfiable does not mean the KB is correct.
         """
         result = minisat(agent.kb.clauses)
-        if result:
+        if result.success:
             print "Agent KB is satisfiable"
         else:
             print "Agent KB is NOT satisfiable!!  There is contradiction that needs fixing!"
