@@ -1,0 +1,10 @@
+python wumpus.py -t
+
+python wumpus.py -l wumpus_4x4_book
+
+with_manual_kb_program, you can query propositional sentences during the game
+Do a ? for complete list of KB queries
+python wumpus.py -k
+
+Run HybridWumpusAgest and its agent_program:
+python wumpus.py -y
