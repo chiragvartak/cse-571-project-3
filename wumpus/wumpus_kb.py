@@ -254,9 +254,8 @@ def axiom_generator_at_least_one_wumpus(xmin, xmax, ymin, ymax):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
-    return axiom_str
+    all_squares = all_possible_squares(xmin, xmax, ymin, ymax)
+    return ' | '.join([wumpus_str(xi,yi) for xi,yi in all_squares])
 
 def axiom_generator_at_most_one_wumpus(xmin, xmax, ymin, ymax):
     """
@@ -266,8 +265,19 @@ def axiom_generator_at_most_one_wumpus(xmin, xmax, ymin, ymax):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    all_squares = all_possible_squares(xmin, xmax, ymin, ymax)
+    assertions = []
+    added = set()
+    for square1 in all_squares:
+        for square2 in all_squares:
+            if square1 == square2: continue
+            key = tuple(sorted([square1, square2]))
+            if key not in added:
+                assertion = '(' + '~'+wumpus_str(square1[0], square1[1]) + ' | ' \
+                            + '~'+wumpus_str(square2[0], square2[1]) + ')'
+                assertions.append(assertion)
+                added.add(key)
+    axiom_str = ' & '.join(assertions)
     return axiom_str
 
 def axiom_generator_only_in_one_location(xi, yi, xmin, xmax, ymin, ymax, t = 0):
@@ -696,8 +706,14 @@ def allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX):
     return list(product([X], Y_allowed_adjacent)) + list(product(X_allowed_adjacent, [Y]))
 
 
+def all_possible_squares(xmin, xmax, ymin, ymax):
+    return [(x, y) for x in range(xmin, xmax+1) for y in range(ymin, ymax+1)]
+
+
 if __name__ == "__main__":
-    X, Y = 2, 1
-    XMIN, XMAX = 1, 4
-    YMIN, YMAX = 1, 4
-    print allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX)
+    # X, Y = 2, 1
+    # XMIN, XMAX = 1, 4
+    # YMIN, YMAX = 1, 4
+    # print allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX)
+
+    print all_possible_squares(1, 4, 1, 4)
