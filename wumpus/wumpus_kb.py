@@ -180,10 +180,11 @@ def axiom_generator_initial_location_assertions(x, y):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    axiom_str = '~'+pit_str(x,y) + ' & ' + '~'+wumpus_str(x,y)
     return axiom_str
 
+# TODO: The "or the same location!" part, does not make much sense to me. I have not implemented it.
+# Maybe it will come to bite me later? Need to check.
 def axiom_generator_pits_and_breezes(x, y, xmin, xmax, ymin, ymax):
     """
     Assert that Breezes (atemporal) are only found in locations where
@@ -196,6 +197,12 @@ def axiom_generator_pits_and_breezes(x, y, xmin, xmax, ymin, ymax):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
+    adjacent_locations = allowed_adjacent_locations(x, y, xmin, xmax, ymin, ymax)
+    adjacent_pit_symbols = [pit_str(xi,yi) for xi,yi in adjacent_locations]
+    pit_in_at_least_one_adjacent_location = " | ".join(adjacent_pit_symbols)
+
+    axiom_str = breeze_str(x,y) + " <=> " + "(" + pit_in_at_least_one_adjacent_location + ")"
+
     return axiom_str
 
 def generate_pit_and_breeze_axioms(xmin, xmax, ymin, ymax):
@@ -222,6 +229,12 @@ def axiom_generator_wumpus_and_stench(x, y, xmin, xmax, ymin, ymax):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
+    adjacent_locations = allowed_adjacent_locations(x, y, xmin, xmax, ymin, ymax)
+    adjacent_wumpus_symbols = [wumpus_str(xi, yi) for xi, yi in adjacent_locations]
+    wumpus_in_at_least_one_adjacent_location = " | ".join(adjacent_wumpus_symbols)
+
+    axiom_str = stench_str(x, y) + " <=> " + "(" + wumpus_in_at_least_one_adjacent_location + ")"
+
     return axiom_str
 
 def generate_wumpus_and_stench_axioms(xmin, xmax, ymin, ymax):
@@ -664,3 +677,27 @@ def generate_mutually_exclusive_axioms(t):
     return filter(lambda s: s != '', axioms)
 
 #-------------------------------------------------------------------------------
+
+# Some utility functions go here:
+
+
+def allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX):
+    X_allowed_adjacent = [X-1, X+1]
+    if X == XMAX:
+        X_allowed_adjacent.remove(X+1)
+    if X == XMIN:
+        X_allowed_adjacent.remove(X-1)
+    Y_allowed_adjacent = [Y-1, Y+1]
+    if Y == YMAX:
+        Y_allowed_adjacent.remove(Y+1)
+    if Y == YMIN:
+        Y_allowed_adjacent.remove(Y-1)
+    from itertools import product
+    return list(product([X], Y_allowed_adjacent)) + list(product(X_allowed_adjacent, [Y]))
+
+
+if __name__ == "__main__":
+    X, Y = 2, 1
+    XMIN, XMAX = 1, 4
+    YMIN, YMAX = 1, 4
+    print allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX)
