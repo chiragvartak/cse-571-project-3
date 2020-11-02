@@ -675,7 +675,7 @@ def run_command(options):
 
 if __name__ == '__main__':
     """
-    The main funciton called when wumpus_test.py is run from the command line:
+    The main function called when wumpus_test.py is run from the command line:
     > python wumpus_test.py <options>
     """
     options = readCommand( sys.argv[1:] )

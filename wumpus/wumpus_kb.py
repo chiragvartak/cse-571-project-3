@@ -76,6 +76,7 @@ def loc_proposition_to_tuple(loc_prop):
     parts = loc_prop.split('_')
     return (int(parts[0][1:]), int(parts[1]))
 
+# Hmm, even the actions are defined as PL sentences - no, these are not actions, these are just other env "states"
 proposition_bases_state_fluents = ['HeadingNorth', 'HeadingEast',
                                    'HeadingSouth', 'HeadingWest',
                                    'HaveArrow', 'WumpusAlive']
@@ -102,6 +103,7 @@ def state_wumpus_alive_str(t):
 proposition_bases_actions = ['Forward', 'Grab', 'Shoot', 'Climb',
                              'TurnLeft', 'TurnRight', 'Wait']
 
+# .. and I think so is the physics of the game - defined as PL sentences.
 def action_forward_str(t=None):
     "Action Forward executed at time <t>"
     return ('Forward{0}'.format(t) if t != None else 'Forward')
@@ -138,6 +140,9 @@ proposition_bases_all = [proposition_bases_atemporal_location,
 # Axiom Generator: Current Percept Sentence
 #-------------------------------------------------------------------------------
 
+# I know I have quite simply written this. And I think that's fine because an input-output example is given.
+# But I think, in general, you will have to keep an eye on all propositional symbols, to make sure that you are not
+# leaving out anything that has to be asserted.
 #def make_percept_sentence(t, tvec):
 def axiom_generator_percept_sentence(t, tvec):
     """
@@ -154,8 +159,12 @@ def axiom_generator_percept_sentence(t, tvec):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    stench_pr = ('' if tvec[0] else '~') + percept_stench_str(t)
+    breeze_pr = ('' if tvec[1] else '~') + percept_breeze_str(t)
+    glitter_pr = ('' if tvec[2] else '~') + percept_glitter_str(t)
+    bump_pr = ('' if tvec[3] else '~') + percept_bump_str(t)
+    scream_pr = ('' if tvec[4] else '~') + percept_scream_str(t)
+    axiom_str = ' & '.join([stench_pr, breeze_pr, glitter_pr, bump_pr, scream_pr])
     return axiom_str
 
 
@@ -341,6 +350,29 @@ def generate_square_OK_axioms(t, xmin, xmax, ymin, ymax):
 #-------------------------------------------------------------------------------
 # Connection between breeze / stench percepts and atemporal location properties
 
+# Ah, look at this - mapping the percepts to the actual knowledge.
+# This is where the dicussion of methodology of how the knowledge base is implemented and modified comes into picture.
+# How I think of it, there can be 2 ways to work upon the knowledge:
+# 1) Have fewer PL sentences, and only atemporal PL sentences, and, keep modifying them, based on the percepts you
+# you receive at each step. You will be modifying them using simple Python code. But the problem that arises is, when
+# one PL sentence is modified, how do you modify the rest of the KB, to incorporate the change based on this new
+# knowledge? I think that will be a very difficult problem to solve.
+# 2) Another alternative, that what is being done here, is introducing temporal information, and creating newer PL
+# sentences. This way you don't need to modify existing PL sentences at all, because they are of a previous time. Of
+# course, this is simpler, but introduces a large number of PL symbols. And I think, most of there PL symbols are
+# useless information, that you are mostly not gonna use. Like, do you really care about *when* you killed the wumpus?
+# Just the fact that the wumpus has been killed is enough to make future decisions. But yeah, this approach is simpler,
+# and this is the approach that is being used in the project.
+#
+# There is one more things I want to point out. With approach (1) you will mostly write non-PL Python code for things
+# like doing actions and making sense of sequences. I mean, that this code will be told which action has been done (or
+# which percept has been observed) and modify the existing, relevant PL sentences accordingly.
+# But with (2), because we don't know how to properly modify the KB based on actions and percepts, we model that as PL
+# sentences themselves, and add more PL sentences to link those to the PL sentences that we actually care about.
+# That is, (Breeze1, L_1_1) -- Breeze1_1 -- (P_1_2 or P_2_1)
+# Notice how the first two PL sentences relate the percepts to the PL sentences that we actually care about to the
+# actual inference that we again care about. The second link is what we mainly have been learning all this time in
+# theory. The first link is just to make working on the KB in this project easier.
 def axiom_generator_breeze_percept_and_location_property(x, y, t):
     """
     Assert that when in a location at time t, then perceiving a breeze
@@ -606,7 +638,7 @@ def generate_heading_only_one_direction_axioms(t):
 
 def axiom_generator_only_one_action_axioms(t):
     """
-    Assert that only one axion can be executed at a time.
+    Assert that only one action can be executed at a time.
     
     t := time
     """

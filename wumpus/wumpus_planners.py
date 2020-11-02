@@ -77,7 +77,7 @@ def plan_route(current, heading, goals, allowed):
     Given:
        current location: tuple (x,y)
        heading: integer representing direction
-       gaals: list of one or more tuple goal-states
+       goals: list of one or more tuple goal-states
        allowed: list of locations that can be moved to
     ... return a list of actions (no time stamps!) that when executed
     will take the agent from the current location to one of (the closest)
@@ -86,7 +86,7 @@ def plan_route(current, heading, goals, allowed):
     (1) Construct a PlanRouteProblem that extends search.Problem
     (2) Pass the PlanRouteProblem as the argument to astar_search
         (search.astar_search(Problem)) to find the action sequence.
-        Astar returns a node.  You can call node.solution() to exract
+        Astar returns a node.  You can call node.solution() to extract
         the list of actions.
     NOTE: represent a state as a triple: (x, y, heading)
           where heading will be an integer, as follows:
