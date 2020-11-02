@@ -585,7 +585,7 @@ def axiom_generator_have_arrow_ssa(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    "{0} <=> ({1} & ~{2})".format(
+    axiom_str = "{0} <=> ({1} & ~{2})".format(
         state_have_arrow_str(t+1),
         state_have_arrow_str(t),
         action_shoot_str(t)
@@ -743,8 +743,12 @@ def axiom_generator_heading_only_north(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    axiom_str = "{} <=> (~{} & ~{} & ~{})".format(
+        state_heading_north_str(t),
+        state_heading_south_str(t),
+        state_heading_east_str(t),
+        state_heading_west_str(t)
+    )
     return axiom_str
 
 def axiom_generator_heading_only_east(t):
@@ -756,8 +760,12 @@ def axiom_generator_heading_only_east(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    axiom_str = "{} <=> (~{} & ~{} & ~{})".format(
+        state_heading_east_str(t),
+        state_heading_south_str(t),
+        state_heading_north_str(t),
+        state_heading_west_str(t)
+    )
     return axiom_str
 
 def axiom_generator_heading_only_south(t):
@@ -769,8 +777,12 @@ def axiom_generator_heading_only_south(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    axiom_str = "{} <=> (~{} & ~{} & ~{})".format(
+        state_heading_south_str(t),
+        state_heading_north_str(t),
+        state_heading_east_str(t),
+        state_heading_west_str(t)
+    )
     return axiom_str
 
 def axiom_generator_heading_only_west(t):
@@ -782,8 +794,12 @@ def axiom_generator_heading_only_west(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    axiom_str = "{} <=> (~{} & ~{} & ~{})".format(
+        state_heading_west_str(t),
+        state_heading_south_str(t),
+        state_heading_east_str(t),
+        state_heading_north_str(t)
+    )
     return axiom_str
 
 def generate_heading_only_one_direction_axioms(t):
@@ -801,8 +817,17 @@ def axiom_generator_only_one_action_axioms(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    assertions = []
+    added = set()
+    for action1 in proposition_bases_actions:
+        for action2 in proposition_bases_actions:
+            key = tuple(sorted([action1, action2]))
+            if (key in added) or (action1 == action2):
+                continue
+            assertion = "~{} | ~{}".format(action1+str(t), action2+str(t))
+            assertions.append(assertion)
+            added.add(key)
+    axiom_str = " & ".join(['('+e+')' for e in assertions])
     return axiom_str
 
 
@@ -852,4 +877,4 @@ if __name__ == "__main__":
 
     print all_possible_squares(1, 4, 1, 4)
 
-# TODO: Stench in wumpus's location? Breeze in pit's location?
+# TODO: Stench in wumpus's location? Breeze in pit's location? Yes this needs to be done. But take a look at the outputs first.
