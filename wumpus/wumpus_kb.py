@@ -333,8 +333,7 @@ def axiom_generator_have_arrow_and_wumpus_alive(t = 0):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    axiom_str = state_have_arrow_str(t) + ' & ' + state_wumpus_alive_str(t)
     return axiom_str
 
 
@@ -375,6 +374,10 @@ def axiom_generator_location_OK(x, y, t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
+    no_pit = '~' + pit_str(x,y)
+    wumpus_condition = "(~{0} | ~{1})".format(state_wumpus_alive_str(t), wumpus_str(x,y))
+    rhs = ' & '.join([no_pit, wumpus_condition])
+    axiom_str = "{0} <=> ({1})".format(state_OK_str(x,y,t), rhs)
     return axiom_str
 
 def generate_square_OK_axioms(t, xmin, xmax, ymin, ymax):
