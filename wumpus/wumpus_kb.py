@@ -481,7 +481,7 @@ def generate_stench_percept_and_location_axioms(t, xmin, xmax, ymin, ymax):
 # NOTE: this is very expensive in terms of generating many (~170 per axiom) CNF clauses!
 def axiom_generator_at_location_ssa(t, x, y, xmin, xmax, ymin, ymax):
     """
-    Assert the condidtions at time t under which the agent is in
+    Assert the conditions at time t under which the agent is in
     a particular location (state_loc_str: L) at time t+1, following
     the successor-state axiom pattern.
 
@@ -495,6 +495,58 @@ def axiom_generator_at_location_ssa(t, x, y, xmin, xmax, ymin, ymax):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
+    # Ah! I think the catch given as the "NOTE" is just to consider the "Wait" action too.
+    # Okay, I'm not so sure anymore
+    # TODO: Only generating for (1,1) and (1,2). Might or might not be a problem.
+
+    upper_location = (x, y+1)
+    bottom_location = (x, y-1)
+    right_location = (x+1, y)
+    left_location = (x-1, y)
+    adjacent_locations = allowed_adjacent_locations(x, y, xmin, xmax, ymin, ymax)
+
+    # For actions that cause F
+    move_south, move_north, move_west, move_east = None, None, None, None
+    if upper_location in adjacent_locations:
+        move_south = "{0} & {1} & {2}".format(
+            state_loc_str(upper_location[0], upper_location[1], t),
+            state_heading_south_str(t),
+            action_forward_str(t)
+        )
+    if bottom_location in adjacent_locations:
+        move_north = "{0} & {1} & {2}".format(
+            state_loc_str(bottom_location[0], bottom_location[1], t),
+            state_heading_north_str(t),
+            action_forward_str(t)
+        )
+    if right_location in adjacent_locations:
+        move_west = "{0} & {1} & {2}".format(
+            state_loc_str(right_location[0], right_location[1], t),
+            state_heading_west_str(t),
+            action_forward_str(t)
+        )
+    if left_location in adjacent_locations:
+        move_east = "{0} & {1} & {2}".format(
+            state_loc_str(left_location[0], left_location[1], t),
+            state_heading_east_str(t),
+            action_forward_str(t)
+        )
+
+    # For actions that prevent F
+    just_stay_where_you_are = "{0} & ~({1} & ~{2})".format(
+        state_loc_str(x,y,t),
+        action_forward_str(t),
+        percept_bump_str(t+1)
+    )
+
+    action_axioms = [move_south, move_north, move_west, move_east, just_stay_where_you_are]
+    action_axioms = [e for e in action_axioms if e is not None]
+    action_axioms = ['('+e+')' for e in action_axioms]
+
+    axiom_str = "{0} <=> ({1})".format(
+        state_loc_str(x,y,t+1),
+        ' | '.join(action_axioms)
+    )
     return axiom_str
 
 def generate_at_location_ssa(t, x, y, xmin, xmax, ymin, ymax, heading):
