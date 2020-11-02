@@ -624,8 +624,21 @@ def axiom_generator_heading_north_ssa(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    # For actions that cause HeadingNorth
+    turn_right_when_facing_west = "{} & {}".format(state_heading_west_str(t), action_turn_right_str(t))
+    turn_left_when_facing_east = "{} & {}".format(state_heading_east_str(t), action_turn_left_str(t))
+
+    # For actions that remove an existing HeadingNorth
+    turn_away_when_facing_north = "{} & ~({} | {})".format(
+        state_heading_north_str(t), action_turn_right_str(t), action_turn_left_str(t)
+    )
+
+    axiom_str = "{} <=> (({}) | ({}) | ({}))".format(
+        state_heading_north_str(t+1),
+        turn_right_when_facing_west,
+        turn_left_when_facing_east,
+        turn_away_when_facing_north
+    )
     return axiom_str
 
 def axiom_generator_heading_east_ssa(t):
@@ -637,8 +650,19 @@ def axiom_generator_heading_east_ssa(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    turn_right_when_facing_north = "{} & {}".format(state_heading_north_str(t), action_turn_right_str(t))
+    turn_left_when_facing_south = "{} & {}".format(state_heading_south_str(t), action_turn_left_str(t))
+
+    turn_away_when_facing_east = "{} & ~({} | {})".format(
+        state_heading_east_str(t), action_turn_right_str(t), action_turn_left_str(t)
+    )
+
+    axiom_str = "{} <=> (({}) | ({}) | ({}))".format(
+        state_heading_east_str(t + 1),
+        turn_right_when_facing_north,
+        turn_left_when_facing_south,
+        turn_away_when_facing_east
+    )
     return axiom_str
 
 def axiom_generator_heading_south_ssa(t):
@@ -650,8 +674,19 @@ def axiom_generator_heading_south_ssa(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    turn_right_when_facing_east = "{} & {}".format(state_heading_east_str(t), action_turn_right_str(t))
+    turn_left_when_facing_west = "{} & {}".format(state_heading_west_str(t), action_turn_left_str(t))
+
+    turn_away_when_facing_south = "{} & ~({} | {})".format(
+        state_heading_south_str(t), action_turn_right_str(t), action_turn_left_str(t)
+    )
+
+    axiom_str = "{} <=> (({}) | ({}) | ({}))".format(
+        state_heading_south_str(t + 1),
+        turn_right_when_facing_east,
+        turn_left_when_facing_west,
+        turn_away_when_facing_south
+    )
     return axiom_str
 
 def axiom_generator_heading_west_ssa(t):
@@ -663,8 +698,19 @@ def axiom_generator_heading_west_ssa(t):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    turn_right_when_facing_south = "{} & {}".format(state_heading_south_str(t), action_turn_right_str(t))
+    turn_left_when_facing_north = "{} & {}".format(state_heading_north_str(t), action_turn_left_str(t))
+
+    turn_away_when_facing_west = "{} & ~({} | {})".format(
+        state_heading_west_str(t), action_turn_right_str(t), action_turn_left_str(t)
+    )
+
+    axiom_str = "{} <=> (({}) | ({}) | ({}))".format(
+        state_heading_west_str(t + 1),
+        turn_right_when_facing_south,
+        turn_left_when_facing_north,
+        turn_away_when_facing_west
+    )
     return axiom_str
 
 def generate_heading_ssa(t):
@@ -805,3 +851,5 @@ if __name__ == "__main__":
     # print allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX)
 
     print all_possible_squares(1, 4, 1, 4)
+
+# TODO: Stench in wumpus's location? Breeze in pit's location?
