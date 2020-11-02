@@ -290,8 +290,10 @@ def axiom_generator_only_in_one_location(xi, yi, xmin, xmax, ymin, ymax, t = 0):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    other_locations = all_possible_squares(xmin, xmax, ymin, ymax)
+    other_locations.remove((xi,yi))
+    not_in_other_locations = ' & '.join(['~'+state_loc_str(other_x, other_y, t) for other_x,other_y in other_locations])
+    axiom_str = state_loc_str(xi,yi,t) + ' & ' + '(' + not_in_other_locations + ')'
     return axiom_str
 
 def axiom_generator_only_one_heading(heading = 'north', t = 0):
@@ -304,8 +306,23 @@ def axiom_generator_only_one_heading(heading = 'north', t = 0):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Comment or delete the next line once this function has been implemented.
-    utils.print_not_implemented()
+    heading_prop = None
+    if heading == 'north':
+        heading_prop = state_heading_north_str(t)
+    elif heading == 'east':
+        heading_prop = state_heading_east_str(t)
+    elif heading == 'south':
+        heading_prop = state_heading_south_str(t)
+    elif heading == 'west':
+        heading_prop = state_heading_west_str(t)
+    else:
+        raise Exception('Unreachable statement')
+    other_directions = [
+        state_heading_north_str(t), state_heading_east_str(t), state_heading_south_str(t), state_heading_west_str(t)
+    ]
+    other_directions.remove(heading_prop)
+    no_other_direction = ' & '.join(['~'+direction for direction in other_directions])
+    axiom_str = heading_prop + ' & ' + '(' + no_other_direction + ')'
     return axiom_str
 
 def axiom_generator_have_arrow_and_wumpus_alive(t = 0):
