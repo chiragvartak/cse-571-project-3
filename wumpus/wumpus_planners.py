@@ -126,29 +126,44 @@ class PlanRouteProblem(search.Problem):
         Heuristic that will be used by search.astar_search()
         """
         "*** YOUR CODE HERE ***"
-        pass
+        return min([manhattan_distance_with_heading(node.state, gs) for gs in self.goals])
 
     def actions(self, state):
         """
         Return list of allowed actions that can be made in state
         """
         "*** YOUR CODE HERE ***"
-        pass
-
+        x, y, direction = state
+        if forward_location(x, y, direction) in self.allowed:
+            return ['Forward', 'TurnLeft', 'TurnRight']
+        else:
+            return ['TurnLeft', 'TurnRight']
 
     def result(self, state, action):
         """
         Return the new state after applying action to state
         """
         "*** YOUR CODE HERE ***"
-        pass
+        x, y, direction = state
+        if action == 'Forward':
+            forward_loc = forward_location(x, y, direction)
+            return (forward_loc[0], forward_loc[1], direction)
+        elif action == 'TurnLeft':
+            new_direction = (direction + 1) % 4
+            return (state[0], state[1], new_direction)
+        elif action == 'TurnRight':
+            new_direction = (direction - 1) % 4
+            return (state[0], state[1], new_direction)
+        else:
+            raise Exception("Invalid action: " + action)
 
     def goal_test(self, state):
         """
         Return True if state is a goal state
         """
         "*** YOUR CODE HERE ***"
-        return True
+        x, y, _ = state
+        return (x,y) in self.goals
 
 #-------------------------------------------------------------------------------
 
@@ -287,3 +302,25 @@ def test_PSP(initial = (0,0,3)):
                       (3,0),(3,1),(3,2),(3,3)])
     
 #-------------------------------------------------------------------------------
+
+# Some utility functions go here:
+
+
+def forward_location(state_x, state_y, direction):
+    if direction == 0:  # North
+        return (state_x, state_y+1)
+    elif direction == 1:  # West
+        return (state_x-1, state_y)
+    elif direction == 2:  # South
+        return (state_x, state_y-1)
+    elif direction == 3:  # East
+        return (state_x+1, state_y)
+    else:
+        raise Exception("Invalid direction provided: " + repr(direction))
+
+
+if __name__ == "__main__":
+    print test_PRP((0,0,0))
+    print test_PRP((0, 0, 1))
+    print test_PRP((0, 0, 2))
+    print test_PRP((0, 0, 3))
