@@ -200,8 +200,11 @@ def axiom_generator_pits_and_breezes(x, y, xmin, xmax, ymin, ymax):
     adjacent_locations = allowed_adjacent_locations(x, y, xmin, xmax, ymin, ymax)
     adjacent_pit_symbols = [pit_str(xi,yi) for xi,yi in adjacent_locations]
     pit_in_at_least_one_adjacent_location = " | ".join(adjacent_pit_symbols)
+    pit_in_same_location = pit_str(x, y)
 
-    axiom_str = breeze_str(x,y) + " <=> " + "(" + pit_in_at_least_one_adjacent_location + ")"
+    axiom_str = breeze_str(x,y) + " <=> " + "(" + pit_in_at_least_one_adjacent_location + \
+                " | " + pit_in_same_location + \
+                ")"
 
     return axiom_str
 
