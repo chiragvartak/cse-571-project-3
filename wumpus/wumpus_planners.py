@@ -206,10 +206,15 @@ def plan_shot(current, heading, goals, allowed):
     """ Plan route to nearest location with heading directed toward one of the
     possible wumpus locations (in goals), then append shoot action.
     NOTE: This assumes you can shoot through walls!!  That's ok for now. """
+    print "goals", goals
+    print "allowed", allowed
+    print "goals and allowed:", (goals and allowed)
     if goals and allowed:
         psp = PlanShotProblem((current[0], current[1], heading), goals, allowed)
         node = search.astar_search(psp)
+        print "node", node
         if node:
+            print "Hello"
             plan = node.solution()
             plan.append(action_shoot_str(None))
             # HACK:
@@ -240,34 +245,57 @@ class PlanShotProblem(search.Problem):
         self.initial = initial # initial state
         self.goals = goals     # list of goals that can be achieved
         self.allowed = allowed # the states we can move into
+        self.nearest_goal = min([(manhattan_distance_with_heading(initial, goal), goal) for goal in goals])[1]
+        self.possible_goal_states_so_you_can_shoot = possible_goal_states_so_you_can_shoot(
+            (self.nearest_goal[0], self.nearest_goal[1]),
+            self.allowed
+        )
+        print "nearest_goal", self.nearest_goal
+        print "possible_goal_states_so_you_can_shoot", self.possible_goal_states_so_you_can_shoot
 
     def h(self,node):
         """
         Heuristic that will be used by search.astar_search()
         """
         "*** YOUR CODE HERE ***"
-        pass
+        return 0
 
     def actions(self, state):
         """
         Return list of allowed actions that can be made in state
         """
         "*** YOUR CODE HERE ***"
-        pass
+        x, y, direction = state
+        if forward_location(x, y, direction) in self.allowed:
+            return ['Forward', 'TurnLeft', 'TurnRight']
+        else:
+            return ['TurnLeft', 'TurnRight']
 
     def result(self, state, action):
         """
         Return the new state after applying action to state
         """
         "*** YOUR CODE HERE ***"
-        pass
+        x, y, direction = state
+        if action == 'Forward':
+            forward_loc = forward_location(x, y, direction)
+            return (forward_loc[0], forward_loc[1], direction)
+        elif action == 'TurnLeft':
+            new_direction = (direction + 1) % 4
+            return (state[0], state[1], new_direction)
+        elif action == 'TurnRight':
+            new_direction = (direction - 1) % 4
+            return (state[0], state[1], new_direction)
+        else:
+            raise Exception("Invalid action: " + action)
 
     def goal_test(self, state):
         """
         Return True if state is a goal state
         """
         "*** YOUR CODE HERE ***"
-        return True
+        # print "Goal test:", state
+        return state in self.possible_goal_states_so_you_can_shoot
 
 #-------------------------------------------------------------------------------
 
@@ -319,8 +347,31 @@ def forward_location(state_x, state_y, direction):
         raise Exception("Invalid direction provided: " + repr(direction))
 
 
+def possible_goal_states_so_you_can_shoot(wumpus_position, allowed_positions):
+    pltsf = []
+    for allowed_position in allowed_positions:
+        if wumpus_position[0] == allowed_position[0]:
+            if wumpus_position[1] >= allowed_position[1]:
+                pltsf.append((allowed_position[0], allowed_position[1], 0))  # North
+            else:
+                pltsf.append((allowed_position[0], allowed_position[1], 2))  # South
+        elif wumpus_position[1] == allowed_position[1]:
+            if wumpus_position[0] >= allowed_position[0]:
+                pltsf.append((allowed_position[0], allowed_position[1], 3))  # East
+            else:
+                pltsf.append((allowed_position[0], allowed_position[1], 1))  # West
+    return pltsf
+
+
+
 if __name__ == "__main__":
-    print test_PRP((0,0,0))
-    print test_PRP((0, 0, 1))
-    print test_PRP((0, 0, 2))
-    print test_PRP((0, 0, 3))
+    # print test_PRP((0,0,0))
+    # print test_PRP((0, 0, 1))
+    # print test_PRP((0, 0, 2))
+    # print test_PRP((0, 0, 3))
+
+    print test_PSP((0, 0, 0))
+    print test_PSP((0, 0, 1))
+    print test_PSP((0, 0, 2))
+    print test_PSP((0, 0, 3))
+
