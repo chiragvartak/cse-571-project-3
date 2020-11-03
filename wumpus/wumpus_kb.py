@@ -232,8 +232,11 @@ def axiom_generator_wumpus_and_stench(x, y, xmin, xmax, ymin, ymax):
     adjacent_locations = allowed_adjacent_locations(x, y, xmin, xmax, ymin, ymax)
     adjacent_wumpus_symbols = [wumpus_str(xi, yi) for xi, yi in adjacent_locations]
     wumpus_in_at_least_one_adjacent_location = " | ".join(adjacent_wumpus_symbols)
+    wumpus_in_the_same_location = wumpus_str(x, y)
 
-    axiom_str = stench_str(x, y) + " <=> " + "(" + wumpus_in_at_least_one_adjacent_location + ")"
+    axiom_str = stench_str(x, y) + " <=> " + "(" + wumpus_in_at_least_one_adjacent_location + \
+                " | " + wumpus_in_the_same_location + \
+                ")"
 
     return axiom_str
 
