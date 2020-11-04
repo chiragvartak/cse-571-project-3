@@ -1,4 +1,4 @@
-#!/usr/bin/zsh -ex
+#!/bin/bash -ex
 
 cd wumpus
 time python wumpus.py -y -l wumpus_4x4_book
