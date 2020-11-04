@@ -501,10 +501,6 @@ def axiom_generator_at_location_ssa(t, x, y, xmin, xmax, ymin, ymax):
     """
     axiom_str = ''
     "*** YOUR CODE HERE ***"
-    # Ah! I think the catch given as the "NOTE" is just to consider the "Wait" action too.
-    # Okay, I'm not so sure anymore
-    # TODO: Only generating for (1,1) and (1,2). Might or might not be a problem.
-
     upper_location = (x, y+1)
     bottom_location = (x, y-1)
     right_location = (x+1, y)
@@ -873,14 +869,3 @@ def allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX):
 
 def all_possible_squares(xmin, xmax, ymin, ymax):
     return [(x, y) for x in range(xmin, xmax+1) for y in range(ymin, ymax+1)]
-
-
-if __name__ == "__main__":
-    # X, Y = 2, 1
-    # XMIN, XMAX = 1, 4
-    # YMIN, YMAX = 1, 4
-    # print allowed_adjacent_locations(X, Y, XMIN, XMAX, YMIN, YMAX)
-
-    print all_possible_squares(1, 4, 1, 4)
-
-# TODO: Stench in wumpus's location? Breeze in pit's location? Yes this needs to be done. But take a look at the outputs first.

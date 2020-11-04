@@ -163,7 +163,7 @@ class PlanRouteProblem(search.Problem):
         """
         "*** YOUR CODE HERE ***"
         x, y, _ = state
-        return (x,y) in self.goals
+        return (x, y) in self.goals
 
 #-------------------------------------------------------------------------------
 
@@ -248,11 +248,8 @@ class PlanShotProblem(search.Problem):
         self.nearest_goal = min([(manhattan_distance_with_heading(initial, goal), goal) for goal in goals])[1]
         self.possible_goal_states_so_you_can_shoot = possible_goal_states_so_you_can_shoot(
             [(goal[0], goal[1]) for goal in goals],
-            # (self.nearest_goal[0], self.nearest_goal[1]),
             self.allowed
         )
-        # print "nearest_goal", self.nearest_goal
-        # print "possible_goal_states_so_you_can_shoot", self.possible_goal_states_so_you_can_shoot
 
     def h(self,node):
         """
@@ -295,7 +292,6 @@ class PlanShotProblem(search.Problem):
         Return True if state is a goal state
         """
         "*** YOUR CODE HERE ***"
-        # print "Goal test:", state
         return state in self.possible_goal_states_so_you_can_shoot
 
 #-------------------------------------------------------------------------------
@@ -337,13 +333,13 @@ def test_PSP(initial = (0,0,3)):
 
 def forward_location(state_x, state_y, direction):
     if direction == 0:  # North
-        return (state_x, state_y+1)
+        return (state_x, state_y + 1)
     elif direction == 1:  # West
-        return (state_x-1, state_y)
+        return (state_x - 1, state_y)
     elif direction == 2:  # South
-        return (state_x, state_y-1)
+        return (state_x, state_y - 1)
     elif direction == 3:  # East
-        return (state_x+1, state_y)
+        return (state_x + 1, state_y)
     else:
         raise Exception("Invalid direction provided: " + repr(direction))
 
@@ -363,17 +359,3 @@ def possible_goal_states_so_you_can_shoot(wumpus_positions, allowed_positions):
                 else:
                     pltsf.append((allowed_position[0], allowed_position[1], 1))  # West
     return pltsf
-
-
-
-if __name__ == "__main__":
-    # print test_PRP((0,0,0))
-    # print test_PRP((0, 0, 1))
-    # print test_PRP((0, 0, 2))
-    # print test_PRP((0, 0, 3))
-
-    print test_PSP((0, 0, 0))
-    print test_PSP((0, 0, 1))
-    print test_PSP((0, 0, 2))
-    print test_PSP((0, 0, 3))
-
