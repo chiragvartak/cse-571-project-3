@@ -3,8 +3,8 @@ HybridWumpusAgent.register_environment()
 HybridWumpusAgent.reset()
 HWA.create_wumpus_KB(): adding initial wumpus axioms
     total number of axioms=38
-    total number of clauses=289
-          >>> time elapsed: 0.014379
+    total number of clauses=305
+          >>> time elapsed: 0.015237
 Scores: <HybridWumpusAgent>=0
   0   1   2   3   4   5    time_step=0
 |---|---|---|---|---|---|
@@ -27,12 +27,12 @@ HWA.agent_program(): at time 0
          ~Stench0 & ~Breeze0 & ~Glitter0 & ~Bump0 & ~Scream0
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 0.086218
+          >>> time elapsed while making current location queries: 0.089708
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.005426
+          >>> time elapsed while making belief heading queries:0.005494
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 294
+         Number of clauses in KB before: 310
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -40,13 +40,13 @@ HWA.agent_program(): at time 0
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 606
+         Number of clauses in KB after: 622
          Total clauses added to KB: 312
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : True
-          >>> time elapsed while making OK location queries: 0.195311
+          >>> time elapsed while making OK location queries: 0.198885
 Find OK locations queries
   0              1              2              3              4              5               time_step=0
 |--------------|--------------|--------------|--------------|--------------|--------------|
@@ -65,7 +65,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 0.157551
+          >>> time elapsed while making unvisited locations queries: 0.159009
 Safe univisited locations:
   0          1          2          3          4          5           time_step=0
 |----------|----------|----------|----------|----------|----------|
@@ -82,7 +82,7 @@ Safe univisited locations:
 | #        | #        | #        | #        | #        | #        | 0
 |----------|----------|----------|----------|----------|----------|
 
-          >>> time elapsed while executing plan_route(): 0.000109
+          >>> time elapsed while executing plan_route(): 0.000106
    HWA.agent_program(): Plan:
     ['Forward']
    HWA.agent_program(): Action: Forward
@@ -110,12 +110,12 @@ HWA.agent_program(): at time 1
          Stench1 & Breeze1 & ~Glitter1 & ~Bump1 & ~Scream1
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 0.193571
+          >>> time elapsed while making current location queries: 0.198523
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.011768
+          >>> time elapsed while making belief heading queries:0.01238
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 612
+         Number of clauses in KB before: 628
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -123,13 +123,13 @@ HWA.agent_program(): at time 1
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 961
+         Number of clauses in KB after: 977
          Total clauses added to KB: 349
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : True
-          >>> time elapsed while making OK location queries: 0.311232
+          >>> time elapsed while making OK location queries: 0.31778
 Find OK locations queries
   0              1              2              3              4              5               time_step=1
 |--------------|--------------|--------------|--------------|--------------|--------------|
@@ -148,7 +148,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 0.290457
+          >>> time elapsed while making unvisited locations queries: 0.274402
 Safe univisited locations:
   0          1          2          3          4          5           time_step=1
 |----------|----------|----------|----------|----------|----------|
@@ -165,7 +165,7 @@ Safe univisited locations:
 | #        | #        | #        | #        | #        | #        | 0
 |----------|----------|----------|----------|----------|----------|
 
-          >>> time elapsed while executing plan_route(): 0.000148
+          >>> time elapsed while executing plan_route(): 0.000147
    HWA.agent_program(): Plan:
     ['TurnRight', 'TurnRight', 'Forward', 'TurnLeft', 'Forward']
    HWA.agent_program(): Action: TurnRight
@@ -193,12 +193,12 @@ HWA.agent_program(): at time 2
          Stench2 & Breeze2 & ~Glitter2 & ~Bump2 & ~Scream2
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 0.313434
+          >>> time elapsed while making current location queries: 0.323934
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.077861
+          >>> time elapsed while making belief heading queries:0.079209
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 967
+         Number of clauses in KB before: 983
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -206,7 +206,7 @@ HWA.agent_program(): at time 2
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 1425
+         Number of clauses in KB after: 1441
          Total clauses added to KB: 458
    HWA.agent_program(): Already have plan (with 4 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -236,12 +236,12 @@ HWA.agent_program(): at time 3
          Stench3 & Breeze3 & ~Glitter3 & ~Bump3 & ~Scream3
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 0.48873
+          >>> time elapsed while making current location queries: 0.529008
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.090396
+          >>> time elapsed while making belief heading queries:0.097465
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 1431
+         Number of clauses in KB before: 1447
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -249,7 +249,7 @@ HWA.agent_program(): at time 3
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 1743
+         Number of clauses in KB after: 1759
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 3 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -279,12 +279,12 @@ HWA.agent_program(): at time 4
          ~Stench4 & ~Breeze4 & ~Glitter4 & ~Bump4 & ~Scream4
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 0.591289
+          >>> time elapsed while making current location queries: 0.653833
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.110086
+          >>> time elapsed while making belief heading queries:0.134179
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 1749
+         Number of clauses in KB before: 1765
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -292,7 +292,7 @@ HWA.agent_program(): at time 4
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  60
-         Number of clauses in KB after: 2002
+         Number of clauses in KB after: 2018
          Total clauses added to KB: 253
    HWA.agent_program(): Already have plan (with 2 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -322,12 +322,12 @@ HWA.agent_program(): at time 5
          ~Stench5 & ~Breeze5 & ~Glitter5 & ~Bump5 & ~Scream5
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 0.677894
+          >>> time elapsed while making current location queries: 0.779599
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.167819
+          >>> time elapsed while making belief heading queries:0.180822
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 2008
+         Number of clauses in KB before: 2024
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -335,7 +335,7 @@ HWA.agent_program(): at time 5
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 2320
+         Number of clauses in KB after: 2336
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 1 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -365,12 +365,12 @@ HWA.agent_program(): at time 6
          ~Stench6 & Breeze6 & ~Glitter6 & ~Bump6 & ~Scream6
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 1)
-          >>> time elapsed while making current location queries: 0.787283
+          >>> time elapsed while making current location queries: 0.825786
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.191346
+          >>> time elapsed while making belief heading queries:0.202968
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 2326
+         Number of clauses in KB before: 2342
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -378,13 +378,13 @@ HWA.agent_program(): at time 6
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 2675
+         Number of clauses in KB after: 2691
          Total clauses added to KB: 349
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : True
-          >>> time elapsed while making OK location queries: 0.891307
+          >>> time elapsed while making OK location queries: 1.021896
 Find OK locations queries
   0               1               2               3               4               5                time_step=6
 |---------------|---------------|---------------|---------------|---------------|---------------|
@@ -403,7 +403,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 0.728479
+          >>> time elapsed while making unvisited locations queries: 0.866894
 Safe univisited locations:
   0   1   2   3   4   5    time_step=6
 |---|---|---|---|---|---|
@@ -420,10 +420,10 @@ Safe univisited locations:
 | # | # | # | # | # | # | 0
 |---|---|---|---|---|---|
 
-          >>> time elapsed while executing plan_route(): 7.00000000009e-06
+          >>> time elapsed while executing plan_route(): 9.99999999962e-06
    HWA.agent_program(): Plan to shoot wumpus...
      HWA.find_possible_wumpus_locations()
-          >>> time elapsed while making possible wumpus location queries: 0.879738
+          >>> time elapsed while making possible wumpus location queries: 0.931791
 Possible Wumpus Location queries
   0            1            2            3            4            5             time_step=6
 |------------|------------|------------|------------|------------|------------|
@@ -441,7 +441,7 @@ Possible Wumpus Location queries
 |------------|------------|------------|------------|------------|------------|
 
 Possible locations: [(1, 3)]
-          >>> time elapsed while executing plan_shot(): 0.000158000000001
+          >>> time elapsed while executing plan_shot(): 0.000157
    HWA.agent_program(): Plan:
     ['TurnLeft', 'TurnLeft', 'Forward', 'TurnRight', 'Shoot', 'Wait']
    HWA.agent_program(): Action: TurnLeft
@@ -469,12 +469,12 @@ HWA.agent_program(): at time 7
          ~Stench7 & Breeze7 & ~Glitter7 & ~Bump7 & ~Scream7
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 1)
-          >>> time elapsed while making current location queries: 0.897015
+          >>> time elapsed while making current location queries: 0.973508
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.055537
+          >>> time elapsed while making belief heading queries:0.058291
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 2681
+         Number of clauses in KB before: 2697
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -482,7 +482,7 @@ HWA.agent_program(): at time 7
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 3139
+         Number of clauses in KB after: 3155
          Total clauses added to KB: 458
    HWA.agent_program(): Already have plan (with 5 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -512,12 +512,12 @@ HWA.agent_program(): at time 8
          ~Stench8 & Breeze8 & ~Glitter8 & ~Bump8 & ~Scream8
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 1)
-          >>> time elapsed while making current location queries: 1.064247
+          >>> time elapsed while making current location queries: 1.218027
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.1352
+          >>> time elapsed while making belief heading queries:0.145797
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 3145
+         Number of clauses in KB before: 3161
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -525,7 +525,7 @@ HWA.agent_program(): at time 8
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 3457
+         Number of clauses in KB after: 3473
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 4 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -555,12 +555,12 @@ HWA.agent_program(): at time 9
          ~Stench9 & ~Breeze9 & ~Glitter9 & ~Bump9 & ~Scream9
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.186919
+          >>> time elapsed while making current location queries: 1.314778
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.147901
+          >>> time elapsed while making belief heading queries:0.18244
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 3463
+         Number of clauses in KB before: 3479
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -568,7 +568,7 @@ HWA.agent_program(): at time 9
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  60
-         Number of clauses in KB after: 3716
+         Number of clauses in KB after: 3732
          Total clauses added to KB: 253
    HWA.agent_program(): Already have plan (with 3 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -598,12 +598,12 @@ HWA.agent_program(): at time 10
          ~Stench10 & ~Breeze10 & ~Glitter10 & ~Bump10 & ~Scream10
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.251821
+          >>> time elapsed while making current location queries: 1.50122
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.078528
+          >>> time elapsed while making belief heading queries:0.084722
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 3722
+         Number of clauses in KB before: 3738
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -611,7 +611,7 @@ HWA.agent_program(): at time 10
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 4034
+         Number of clauses in KB after: 4050
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 2 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -641,12 +641,12 @@ HWA.agent_program(): at time 11
          ~Stench11 & ~Breeze11 & ~Glitter11 & ~Bump11 & Scream11
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.358507
+          >>> time elapsed while making current location queries: 1.481543
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.084723
+          >>> time elapsed while making belief heading queries:0.088138
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 4040
+         Number of clauses in KB before: 4056
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -654,7 +654,7 @@ HWA.agent_program(): at time 11
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 4352
+         Number of clauses in KB after: 4368
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 1 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -684,12 +684,12 @@ HWA.agent_program(): at time 12
          ~Stench12 & ~Breeze12 & ~Glitter12 & ~Bump12 & ~Scream12
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.472709
+          >>> time elapsed while making current location queries: 1.581161
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.092235
+          >>> time elapsed while making belief heading queries:0.118914
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 4358
+         Number of clauses in KB before: 4374
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -697,13 +697,13 @@ HWA.agent_program(): at time 12
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 4670
+         Number of clauses in KB after: 4686
          Total clauses added to KB: 312
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 1.569179
+          >>> time elapsed while making OK location queries: 1.742045
 Find OK locations queries
   0               1               2               3               4               5                time_step=12
 |---------------|---------------|---------------|---------------|---------------|---------------|
@@ -722,7 +722,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.274395
+          >>> time elapsed while making unvisited locations queries: 1.354104
 Safe univisited locations:
   0   1   2   3   4   5    time_step=12
 |---|---|---|---|---|---|
@@ -739,10 +739,10 @@ Safe univisited locations:
 | # | # | # | # | # | # | 0
 |---|---|---|---|---|---|
 
-          >>> time elapsed while executing plan_route(): 8.00000000112e-06
+          >>> time elapsed while executing plan_route(): 9.00000000215e-06
    HWA.agent_program(): No safe choice, take risk...
    HWA.find_not_unsafe_locations()
-          >>> time elapsed while making not unsafe location queries: 1.566002
+          >>> time elapsed while making not unsafe location queries: 1.706421
 Not Unsafe Location queries
   0            1            2            3            4            5             time_step=12
 |------------|------------|------------|------------|------------|------------|
@@ -759,7 +759,7 @@ Not Unsafe Location queries
 | #          | #          | #          | #          | #          | #          | 0
 |------------|------------|------------|------------|------------|------------|
 
-          >>> time elapsed while executing plan_route(): 0.000149
+          >>> time elapsed while executing plan_route(): 0.000160000000001
    HWA.agent_program(): Plan:
     ['Forward', 'Forward']
    HWA.agent_program(): Action: Forward
@@ -787,12 +787,12 @@ HWA.agent_program(): at time 13
          Stench13 & Breeze13 & ~Glitter13 & ~Bump13 & ~Scream13
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 1.570314
+          >>> time elapsed while making current location queries: 1.68457
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.099164
+          >>> time elapsed while making belief heading queries:0.103739
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 4676
+         Number of clauses in KB before: 4692
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -800,7 +800,7 @@ HWA.agent_program(): at time 13
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 5025
+         Number of clauses in KB after: 5041
          Total clauses added to KB: 349
    HWA.agent_program(): Already have plan (with 1 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -830,12 +830,12 @@ HWA.agent_program(): at time 14
          Stench14 & ~Breeze14 & ~Glitter14 & ~Bump14 & ~Scream14
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 3)
-          >>> time elapsed while making current location queries: 1.687649
+          >>> time elapsed while making current location queries: 1.787257
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.107485
+          >>> time elapsed while making belief heading queries:0.116579
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 5031
+         Number of clauses in KB before: 5047
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -843,32 +843,32 @@ HWA.agent_program(): at time 14
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 5343
+         Number of clauses in KB after: 5359
          Total clauses added to KB: 312
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 1.789991
+          >>> time elapsed while making OK location queries: 1.917025
 Find OK locations queries
-  0               1               2               3               4               5                time_step=14
-|---------------|---------------|---------------|---------------|---------------|---------------|
-| #             | #             | #             | #             | #             | #             | 5
-|---------------|---------------|---------------|---------------|---------------|---------------|
-| #             | OK1_4_14=True | OK2_4_14=?    | OK3_4_14=?    | OK4_4_14=?    | #             | 4
-|---------------|---------------|---------------|---------------|---------------|---------------|
-| #             | OK1_3_14=?    | OK2_3_14=True | OK3_3_14=?    | OK4_3_14=?    | #             | 3
-|---------------|---------------|---------------|---------------|---------------|---------------|
-| #             | OK1_2_14=True | OK2_2_14=?    | OK3_2_14=?    | OK4_2_14=?    | #             | 2
-|---------------|---------------|---------------|---------------|---------------|---------------|
-| #             | OK1_1_14=True | OK2_1_14=True | OK3_1_14=?    | OK4_1_14=?    | #             | 1
-|---------------|---------------|---------------|---------------|---------------|---------------|
-| #             | #             | #             | #             | #             | #             | 0
-|---------------|---------------|---------------|---------------|---------------|---------------|
+  0                1                2                3                4                5                 time_step=14
+|----------------|----------------|----------------|----------------|----------------|----------------|
+| #              | #              | #              | #              | #              | #              | 5
+|----------------|----------------|----------------|----------------|----------------|----------------|
+| #              | OK1_4_14=True  | OK2_4_14=?     | OK3_4_14=?     | OK4_4_14=?     | #              | 4
+|----------------|----------------|----------------|----------------|----------------|----------------|
+| #              | OK1_3_14=True  | OK2_3_14=True  | OK3_3_14=?     | OK4_3_14=?     | #              | 3
+|----------------|----------------|----------------|----------------|----------------|----------------|
+| #              | OK1_2_14=True  | OK2_2_14=False | OK3_2_14=?     | OK4_2_14=?     | #              | 2
+|----------------|----------------|----------------|----------------|----------------|----------------|
+| #              | OK1_1_14=True  | OK2_1_14=True  | OK3_1_14=?     | OK4_1_14=?     | #              | 1
+|----------------|----------------|----------------|----------------|----------------|----------------|
+| #              | #              | #              | #              | #              | #              | 0
+|----------------|----------------|----------------|----------------|----------------|----------------|
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.353582
+          >>> time elapsed while making unvisited locations queries: 1.440681
 Safe univisited locations:
   0           1           2           3           4           5            time_step=14
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -885,7 +885,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 9.09999999976e-05
+          >>> time elapsed while executing plan_route(): 0.000135
    HWA.agent_program(): Plan:
     ['Forward']
    HWA.agent_program(): Action: Forward
@@ -913,12 +913,12 @@ HWA.agent_program(): at time 15
          Stench15 & ~Breeze15 & ~Glitter15 & ~Bump15 & ~Scream15
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 4)
-          >>> time elapsed while making current location queries: 1.799192
+          >>> time elapsed while making current location queries: 1.950411
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.114073
+          >>> time elapsed while making belief heading queries:0.117489
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 5349
+         Number of clauses in KB before: 5365
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -926,13 +926,13 @@ HWA.agent_program(): at time 15
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  60
-         Number of clauses in KB after: 5602
+         Number of clauses in KB after: 5618
          Total clauses added to KB: 253
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 1.880355
+          >>> time elapsed while making OK location queries: 1.979685
 Find OK locations queries
   0                1                2                3                4                5                 time_step=15
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -951,7 +951,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.294403
+          >>> time elapsed while making unvisited locations queries: 1.478898
 Safe univisited locations:
   0           1           2           3           4           5            time_step=15
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -968,7 +968,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 0.000101000000001
+          >>> time elapsed while executing plan_route(): 0.000107
    HWA.agent_program(): Plan:
     ['TurnRight', 'Forward']
    HWA.agent_program(): Action: TurnRight
@@ -996,12 +996,12 @@ HWA.agent_program(): at time 16
          Stench16 & ~Breeze16 & ~Glitter16 & ~Bump16 & ~Scream16
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 4)
-          >>> time elapsed while making current location queries: 1.890299
+          >>> time elapsed while making current location queries: 2.052815
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.471702
+          >>> time elapsed while making belief heading queries:0.50729
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 5608
+         Number of clauses in KB before: 5624
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1009,7 +1009,7 @@ HWA.agent_program(): at time 16
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 5920
+         Number of clauses in KB after: 5936
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 1 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1039,12 +1039,12 @@ HWA.agent_program(): at time 17
          ~Stench17 & ~Breeze17 & ~Glitter17 & ~Bump17 & ~Scream17
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 4)
-          >>> time elapsed while making current location queries: 1.995868
+          >>> time elapsed while making current location queries: 2.119311
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.497934
+          >>> time elapsed while making belief heading queries:0.536397
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 5926
+         Number of clauses in KB before: 5942
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1052,13 +1052,13 @@ HWA.agent_program(): at time 17
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 6275
+         Number of clauses in KB after: 6291
          Total clauses added to KB: 349
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 2.097352
+          >>> time elapsed while making OK location queries: 2.27624
 Find OK locations queries
   0                1                2                3                4                5                 time_step=17
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -1077,7 +1077,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.320925
+          >>> time elapsed while making unvisited locations queries: 1.425084
 Safe univisited locations:
   0           1           2           3           4           5            time_step=17
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -1094,7 +1094,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 9.00000000001e-05
+          >>> time elapsed while executing plan_route(): 9.10000000047e-05
    HWA.agent_program(): Plan:
     ['Forward']
    HWA.agent_program(): Action: Forward
@@ -1122,12 +1122,12 @@ HWA.agent_program(): at time 18
          ~Stench18 & Breeze18 & ~Glitter18 & ~Bump18 & ~Scream18
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (3, 4)
-          >>> time elapsed while making current location queries: 2.116818
+          >>> time elapsed while making current location queries: 2.294962
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.526861
+          >>> time elapsed while making belief heading queries:0.564513
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 6281
+         Number of clauses in KB before: 6297
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1135,13 +1135,13 @@ HWA.agent_program(): at time 18
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 6593
+         Number of clauses in KB after: 6609
          Total clauses added to KB: 312
    HWA.agent_program(): No current plan, find one...
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 2.22196
+          >>> time elapsed while making OK location queries: 2.435258
 Find OK locations queries
   0                1                2                3                4                5                 time_step=18
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -1160,7 +1160,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.250031
+          >>> time elapsed while making unvisited locations queries: 1.454312
 Safe univisited locations:
   0           1           2           3           4           5            time_step=18
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -1177,7 +1177,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 0.000149999999998
+          >>> time elapsed while executing plan_route(): 0.000165000000003
    HWA.agent_program(): Plan:
     ['TurnRight', 'TurnRight', 'Forward', 'TurnLeft', 'Forward']
    HWA.agent_program(): Action: TurnRight
@@ -1205,12 +1205,12 @@ HWA.agent_program(): at time 19
          ~Stench19 & Breeze19 & ~Glitter19 & ~Bump19 & ~Scream19
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (3, 4)
-          >>> time elapsed while making current location queries: 2.24012
+          >>> time elapsed while making current location queries: 2.469679
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.417272
+          >>> time elapsed while making belief heading queries:0.444878
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 6599
+         Number of clauses in KB before: 6615
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1218,7 +1218,7 @@ HWA.agent_program(): at time 19
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 7057
+         Number of clauses in KB after: 7073
          Total clauses added to KB: 458
    HWA.agent_program(): Already have plan (with 4 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1248,12 +1248,12 @@ HWA.agent_program(): at time 20
          ~Stench20 & Breeze20 & ~Glitter20 & ~Bump20 & ~Scream20
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (3, 4)
-          >>> time elapsed while making current location queries: 2.415769
+          >>> time elapsed while making current location queries: 2.556024
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.300756
+          >>> time elapsed while making belief heading queries:0.311956
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 7063
+         Number of clauses in KB before: 7079
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1261,7 +1261,7 @@ HWA.agent_program(): at time 20
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 7412
+         Number of clauses in KB after: 7428
          Total clauses added to KB: 349
    HWA.agent_program(): Already have plan (with 3 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1291,12 +1291,12 @@ HWA.agent_program(): at time 21
          ~Stench21 & ~Breeze21 & ~Glitter21 & ~Bump21 & ~Scream21
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 4)
-          >>> time elapsed while making current location queries: 2.556167
+          >>> time elapsed while making current location queries: 2.756957
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.328713
+          >>> time elapsed while making belief heading queries:0.32253
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 7418
+         Number of clauses in KB before: 7434
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1304,7 +1304,7 @@ HWA.agent_program(): at time 21
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 7730
+         Number of clauses in KB after: 7746
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 2 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1334,12 +1334,12 @@ HWA.agent_program(): at time 22
          ~Stench22 & ~Breeze22 & ~Glitter22 & ~Bump22 & ~Scream22
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 4)
-          >>> time elapsed while making current location queries: 2.641625
+          >>> time elapsed while making current location queries: 2.755395
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.494474
+          >>> time elapsed while making belief heading queries:0.506444
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 7736
+         Number of clauses in KB before: 7752
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1347,7 +1347,7 @@ HWA.agent_program(): at time 22
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 8194
+         Number of clauses in KB after: 8210
          Total clauses added to KB: 458
    HWA.agent_program(): Already have plan (with 1 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1377,12 +1377,12 @@ HWA.agent_program(): at time 23
          Stench23 & Breeze23 & Glitter23 & ~Bump23 & ~Scream23
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 3)
-          >>> time elapsed while making current location queries: 2.822781
+          >>> time elapsed while making current location queries: 2.865339
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.526789
+          >>> time elapsed while making belief heading queries:0.533094
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 8200
+         Number of clauses in KB before: 8216
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1390,13 +1390,13 @@ HWA.agent_program(): at time 23
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 8767
+         Number of clauses in KB after: 8783
          Total clauses added to KB: 567
    HWA.agent_program(): Grab gold and leave!
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 3.044106
+          >>> time elapsed while making OK location queries: 3.08897
 Find OK locations queries
   0                1                2                3                4                5                 time_step=23
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -1413,7 +1413,7 @@ Find OK locations queries
 | #              | #              | #              | #              | #              | #              | 0
 |----------------|----------------|----------------|----------------|----------------|----------------|
 
-          >>> time elapsed while executing plan_route(): 0.000219999999999
+          >>> time elapsed while executing plan_route(): 0.000207000000003
    HWA.agent_program(): Already have plan (with 7 actions left), continue executing...
    HWA.agent_program(): Plan:
     ['Grab', 'TurnRight', 'Forward', 'TurnLeft', 'Forward', 'Forward', 'Climb']
@@ -1442,12 +1442,12 @@ HWA.agent_program(): at time 24
          Stench24 & Breeze24 & ~Glitter24 & ~Bump24 & ~Scream24
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 3)
-          >>> time elapsed while making current location queries: 3.069499
+          >>> time elapsed while making current location queries: 3.083801
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.571851
+          >>> time elapsed while making belief heading queries:0.578414
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 8773
+         Number of clauses in KB before: 8789
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1455,7 +1455,7 @@ HWA.agent_program(): at time 24
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 9340
+         Number of clauses in KB after: 9356
          Total clauses added to KB: 567
    HWA.agent_program(): Already have plan (with 6 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1485,12 +1485,12 @@ HWA.agent_program(): at time 25
          Stench25 & Breeze25 & ~Glitter25 & ~Bump25 & ~Scream25
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 3)
-          >>> time elapsed while making current location queries: 3.29805
+          >>> time elapsed while making current location queries: 3.313624
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.410423
+          >>> time elapsed while making belief heading queries:0.415261
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 9346
+         Number of clauses in KB before: 9362
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1498,7 +1498,7 @@ HWA.agent_program(): at time 25
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 9804
+         Number of clauses in KB after: 9820
          Total clauses added to KB: 458
    HWA.agent_program(): Already have plan (with 5 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1528,12 +1528,12 @@ HWA.agent_program(): at time 26
          Stench26 & ~Breeze26 & ~Glitter26 & ~Bump26 & ~Scream26
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 3)
-          >>> time elapsed while making current location queries: 3.494847
+          >>> time elapsed while making current location queries: 3.497648
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.446707
+          >>> time elapsed while making belief heading queries:0.431952
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 9810
+         Number of clauses in KB before: 9826
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1541,7 +1541,7 @@ HWA.agent_program(): at time 26
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  60
-         Number of clauses in KB after: 10100
+         Number of clauses in KB after: 10116
          Total clauses added to KB: 290
    HWA.agent_program(): Already have plan (with 4 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1571,12 +1571,12 @@ HWA.agent_program(): at time 27
          Stench27 & ~Breeze27 & ~Glitter27 & ~Bump27 & ~Scream27
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 3)
-          >>> time elapsed while making current location queries: 3.585134
+          >>> time elapsed while making current location queries: 3.598376
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.664905
+          >>> time elapsed while making belief heading queries:0.670184
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 10106
+         Number of clauses in KB before: 10122
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1584,7 +1584,7 @@ HWA.agent_program(): at time 27
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 10455
+         Number of clauses in KB after: 10471
          Total clauses added to KB: 349
    HWA.agent_program(): Already have plan (with 3 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1614,12 +1614,12 @@ HWA.agent_program(): at time 28
          Stench28 & Breeze28 & ~Glitter28 & ~Bump28 & ~Scream28
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 3.711796
+          >>> time elapsed while making current location queries: 3.712765
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.69142
+          >>> time elapsed while making belief heading queries:0.696175
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 10461
+         Number of clauses in KB before: 10477
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1627,7 +1627,7 @@ HWA.agent_program(): at time 28
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  61
-         Number of clauses in KB after: 10773
+         Number of clauses in KB after: 10789
          Total clauses added to KB: 312
    HWA.agent_program(): Already have plan (with 2 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1657,12 +1657,12 @@ HWA.agent_program(): at time 29
          ~Stench29 & ~Breeze29 & ~Glitter29 & ~Bump29 & ~Scream29
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 3.810834
+          >>> time elapsed while making current location queries: 3.799671
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.711329
+          >>> time elapsed while making belief heading queries:0.709036
      HWA.agent_program(): Prepare to add temporal axioms
-         Number of clauses in KB before: 10779
+         Number of clauses in KB before: 10795
        HWA.add_temporal_axioms()
            number of location_OK axioms:         16
            number of percept_to_loc axioms:      32
@@ -1670,7 +1670,7 @@ HWA.agent_program(): at time 29
            number of non-location ssa axioms:    6
            number of mutually_exclusive axioms:  5
        Total number of axioms being added:  60
-         Number of clauses in KB after: 11032
+         Number of clauses in KB after: 11048
          Total clauses added to KB: 253
    HWA.agent_program(): Already have plan (with 1 actions left), continue executing...
    HWA.agent_program(): Plan:
@@ -1695,6 +1695,6 @@ Scores: <HybridWumpusAgent>=960
 |---|---|---|---|---|---|
 
 DONE.
-number_of_clauses_over_epochs: [606, 961, 1425, 1743, 2002, 2320, 2675, 3139, 3457, 3716, 4034, 4352, 4670, 5025, 5343, 5602, 5920, 6275, 6593, 7057, 7412, 7730, 8194, 8767, 9340, 9804, 10100, 10455, 10773, 11032]
-belief_loc_query_times: [0.08621799999999999, 0.19357100000000005, 0.313434, 0.4887299999999999, 0.5912889999999997, 0.6778939999999998, 0.7872829999999995, 0.8970149999999997, 1.064247, 1.1869189999999996, 1.2518209999999996, 1.3585070000000012, 1.472709, 1.5703139999999998, 1.6876490000000004, 1.7991920000000015, 1.8902989999999988, 1.9958680000000015, 2.116818000000002, 2.2401199999999974, 2.4157689999999974, 2.556167000000002, 2.6416250000000048, 2.822780999999999, 3.0694990000000075, 3.2980500000000035, 3.494846999999993, 3.5851339999999965, 3.7117960000000068, 3.810834]
+number_of_clauses_over_epochs: [622, 977, 1441, 1759, 2018, 2336, 2691, 3155, 3473, 3732, 4050, 4368, 4686, 5041, 5359, 5618, 5936, 6291, 6609, 7073, 7428, 7746, 8210, 8783, 9356, 9820, 10116, 10471, 10789, 11048]
+belief_loc_query_times: [0.08970800000000001, 0.198523, 0.32393399999999994, 0.5290080000000001, 0.6538330000000001, 0.7795990000000002, 0.8257859999999999, 0.9735080000000007, 1.218027000000001, 1.3147780000000004, 1.50122, 1.4815430000000003, 1.5811610000000016, 1.6845700000000008, 1.7872570000000003, 1.9504109999999955, 2.0528150000000025, 2.1193110000000033, 2.294961999999998, 2.4696789999999993, 2.5560240000000007, 2.756957, 2.755395000000007, 2.8653389999999916, 3.0838010000000082, 3.3136240000000043, 3.497647999999998, 3.598376000000002, 3.7127650000000045, 3.7996710000000036]
 Final Scores: <HybridWumpusAgent>=960

@@ -13,3 +13,7 @@ python wumpus.py -y
 Test runs given:
 HWA_lay_book_run.txt
 HWA_lay_2_run.txt
+
+Test run commands:
+python wumpus.py -y -l wumpus_4x4_book
+python wumpus.py -y -l wumpus_4x4_2
