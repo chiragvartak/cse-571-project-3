@@ -28,6 +28,8 @@ jobs:
     # You can test your matrix by printing the current Python version
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
+    - name: Install dependencies
+      run: sudo apt install minisat python-tk
     - name: Run tests
       run: |
         chmod +x test.sh
