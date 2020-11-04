@@ -183,8 +183,6 @@ def axiom_generator_initial_location_assertions(x, y):
     axiom_str = '~'+pit_str(x,y) + ' & ' + '~'+wumpus_str(x,y)
     return axiom_str
 
-# TODO: The "or the same location!" part, does not make much sense to me. I have not implemented it.
-# Maybe it will come to bite me later? Need to check.
 def axiom_generator_pits_and_breezes(x, y, xmin, xmax, ymin, ymax):
     """
     Assert that Breezes (atemporal) are only found in locations where
