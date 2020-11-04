@@ -4,7 +4,7 @@ HybridWumpusAgent.reset()
 HWA.create_wumpus_KB(): adding initial wumpus axioms
     total number of axioms=38
     total number of clauses=305
-          >>> time elapsed: 0.015237
+          >>> time elapsed: 0.015033
 Scores: <HybridWumpusAgent>=0
   0   1   2   3   4   5    time_step=0
 |---|---|---|---|---|---|
@@ -27,10 +27,10 @@ HWA.agent_program(): at time 0
          ~Stench0 & ~Breeze0 & ~Glitter0 & ~Bump0 & ~Scream0
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 0.089708
+          >>> time elapsed while making current location queries: 0.091153
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.005494
+          >>> time elapsed while making belief heading queries:0.005782
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 310
        HWA.add_temporal_axioms()
@@ -46,7 +46,7 @@ HWA.agent_program(): at time 0
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : True
-          >>> time elapsed while making OK location queries: 0.198885
+          >>> time elapsed while making OK location queries: 0.198661
 Find OK locations queries
   0              1              2              3              4              5               time_step=0
 |--------------|--------------|--------------|--------------|--------------|--------------|
@@ -65,7 +65,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 0.159009
+          >>> time elapsed while making unvisited locations queries: 0.160267
 Safe univisited locations:
   0          1          2          3          4          5           time_step=0
 |----------|----------|----------|----------|----------|----------|
@@ -82,7 +82,7 @@ Safe univisited locations:
 | #        | #        | #        | #        | #        | #        | 0
 |----------|----------|----------|----------|----------|----------|
 
-          >>> time elapsed while executing plan_route(): 0.000106
+          >>> time elapsed while executing plan_route(): 0.000108
    HWA.agent_program(): Plan:
     ['Forward']
    HWA.agent_program(): Action: Forward
@@ -110,10 +110,10 @@ HWA.agent_program(): at time 1
          Stench1 & Breeze1 & ~Glitter1 & ~Bump1 & ~Scream1
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 0.198523
+          >>> time elapsed while making current location queries: 0.200043
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.01238
+          >>> time elapsed while making belief heading queries:0.012467
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 628
        HWA.add_temporal_axioms()
@@ -129,7 +129,7 @@ HWA.agent_program(): at time 1
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : True
-          >>> time elapsed while making OK location queries: 0.31778
+          >>> time elapsed while making OK location queries: 0.318835
 Find OK locations queries
   0              1              2              3              4              5               time_step=1
 |--------------|--------------|--------------|--------------|--------------|--------------|
@@ -148,7 +148,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 0.274402
+          >>> time elapsed while making unvisited locations queries: 0.278437
 Safe univisited locations:
   0          1          2          3          4          5           time_step=1
 |----------|----------|----------|----------|----------|----------|
@@ -165,7 +165,7 @@ Safe univisited locations:
 | #        | #        | #        | #        | #        | #        | 0
 |----------|----------|----------|----------|----------|----------|
 
-          >>> time elapsed while executing plan_route(): 0.000147
+          >>> time elapsed while executing plan_route(): 0.000151
    HWA.agent_program(): Plan:
     ['TurnRight', 'TurnRight', 'Forward', 'TurnLeft', 'Forward']
    HWA.agent_program(): Action: TurnRight
@@ -193,10 +193,10 @@ HWA.agent_program(): at time 2
          Stench2 & Breeze2 & ~Glitter2 & ~Bump2 & ~Scream2
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 0.323934
+          >>> time elapsed while making current location queries: 0.319557
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.079209
+          >>> time elapsed while making belief heading queries:0.078748
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 983
        HWA.add_temporal_axioms()
@@ -236,10 +236,10 @@ HWA.agent_program(): at time 3
          Stench3 & Breeze3 & ~Glitter3 & ~Bump3 & ~Scream3
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 0.529008
+          >>> time elapsed while making current location queries: 0.496456
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.097465
+          >>> time elapsed while making belief heading queries:0.092669
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 1447
        HWA.add_temporal_axioms()
@@ -279,10 +279,10 @@ HWA.agent_program(): at time 4
          ~Stench4 & ~Breeze4 & ~Glitter4 & ~Bump4 & ~Scream4
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 0.653833
+          >>> time elapsed while making current location queries: 0.600798
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.134179
+          >>> time elapsed while making belief heading queries:0.111299
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 1765
        HWA.add_temporal_axioms()
@@ -322,10 +322,10 @@ HWA.agent_program(): at time 5
          ~Stench5 & ~Breeze5 & ~Glitter5 & ~Bump5 & ~Scream5
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 0.779599
+          >>> time elapsed while making current location queries: 0.681289
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.180822
+          >>> time elapsed while making belief heading queries:0.168282
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 2024
        HWA.add_temporal_axioms()
@@ -365,10 +365,10 @@ HWA.agent_program(): at time 6
          ~Stench6 & Breeze6 & ~Glitter6 & ~Bump6 & ~Scream6
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 1)
-          >>> time elapsed while making current location queries: 0.825786
+          >>> time elapsed while making current location queries: 0.782324
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.202968
+          >>> time elapsed while making belief heading queries:0.194733
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 2342
        HWA.add_temporal_axioms()
@@ -384,7 +384,7 @@ HWA.agent_program(): at time 6
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : True
-          >>> time elapsed while making OK location queries: 1.021896
+          >>> time elapsed while making OK location queries: 0.902419
 Find OK locations queries
   0               1               2               3               4               5                time_step=6
 |---------------|---------------|---------------|---------------|---------------|---------------|
@@ -403,7 +403,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 0.866894
+          >>> time elapsed while making unvisited locations queries: 0.735068
 Safe univisited locations:
   0   1   2   3   4   5    time_step=6
 |---|---|---|---|---|---|
@@ -420,10 +420,10 @@ Safe univisited locations:
 | # | # | # | # | # | # | 0
 |---|---|---|---|---|---|
 
-          >>> time elapsed while executing plan_route(): 9.99999999962e-06
+          >>> time elapsed while executing plan_route(): 8.00000000023e-06
    HWA.agent_program(): Plan to shoot wumpus...
      HWA.find_possible_wumpus_locations()
-          >>> time elapsed while making possible wumpus location queries: 0.931791
+          >>> time elapsed while making possible wumpus location queries: 0.890707
 Possible Wumpus Location queries
   0            1            2            3            4            5             time_step=6
 |------------|------------|------------|------------|------------|------------|
@@ -441,7 +441,7 @@ Possible Wumpus Location queries
 |------------|------------|------------|------------|------------|------------|
 
 Possible locations: [(1, 3)]
-          >>> time elapsed while executing plan_shot(): 0.000157
+          >>> time elapsed while executing plan_shot(): 0.000234
    HWA.agent_program(): Plan:
     ['TurnLeft', 'TurnLeft', 'Forward', 'TurnRight', 'Shoot', 'Wait']
    HWA.agent_program(): Action: TurnLeft
@@ -469,10 +469,10 @@ HWA.agent_program(): at time 7
          ~Stench7 & Breeze7 & ~Glitter7 & ~Bump7 & ~Scream7
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 1)
-          >>> time elapsed while making current location queries: 0.973508
+          >>> time elapsed while making current location queries: 0.904108
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.058291
+          >>> time elapsed while making belief heading queries:0.055897
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 2697
        HWA.add_temporal_axioms()
@@ -512,10 +512,10 @@ HWA.agent_program(): at time 8
          ~Stench8 & Breeze8 & ~Glitter8 & ~Bump8 & ~Scream8
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 1)
-          >>> time elapsed while making current location queries: 1.218027
+          >>> time elapsed while making current location queries: 1.085257
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.145797
+          >>> time elapsed while making belief heading queries:0.13621
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 3161
        HWA.add_temporal_axioms()
@@ -555,10 +555,10 @@ HWA.agent_program(): at time 9
          ~Stench9 & ~Breeze9 & ~Glitter9 & ~Bump9 & ~Scream9
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.314778
+          >>> time elapsed while making current location queries: 1.190564
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.18244
+          >>> time elapsed while making belief heading queries:0.148666
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 3479
        HWA.add_temporal_axioms()
@@ -598,10 +598,10 @@ HWA.agent_program(): at time 10
          ~Stench10 & ~Breeze10 & ~Glitter10 & ~Bump10 & ~Scream10
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.50122
+          >>> time elapsed while making current location queries: 1.265898
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.084722
+          >>> time elapsed while making belief heading queries:0.080512
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 3738
        HWA.add_temporal_axioms()
@@ -641,10 +641,10 @@ HWA.agent_program(): at time 11
          ~Stench11 & ~Breeze11 & ~Glitter11 & ~Bump11 & Scream11
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.481543
+          >>> time elapsed while making current location queries: 1.386151
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.088138
+          >>> time elapsed while making belief heading queries:0.086291
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 4056
        HWA.add_temporal_axioms()
@@ -684,10 +684,10 @@ HWA.agent_program(): at time 12
          ~Stench12 & ~Breeze12 & ~Glitter12 & ~Bump12 & ~Scream12
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 1.581161
+          >>> time elapsed while making current location queries: 1.468723
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.118914
+          >>> time elapsed while making belief heading queries:0.092228
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 4374
        HWA.add_temporal_axioms()
@@ -703,7 +703,7 @@ HWA.agent_program(): at time 12
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 1.742045
+          >>> time elapsed while making OK location queries: 1.569587
 Find OK locations queries
   0               1               2               3               4               5                time_step=12
 |---------------|---------------|---------------|---------------|---------------|---------------|
@@ -722,7 +722,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.354104
+          >>> time elapsed while making unvisited locations queries: 1.284465
 Safe univisited locations:
   0   1   2   3   4   5    time_step=12
 |---|---|---|---|---|---|
@@ -739,10 +739,10 @@ Safe univisited locations:
 | # | # | # | # | # | # | 0
 |---|---|---|---|---|---|
 
-          >>> time elapsed while executing plan_route(): 9.00000000215e-06
+          >>> time elapsed while executing plan_route(): 8.99999999859e-06
    HWA.agent_program(): No safe choice, take risk...
    HWA.find_not_unsafe_locations()
-          >>> time elapsed while making not unsafe location queries: 1.706421
+          >>> time elapsed while making not unsafe location queries: 1.583325
 Not Unsafe Location queries
   0            1            2            3            4            5             time_step=12
 |------------|------------|------------|------------|------------|------------|
@@ -759,7 +759,7 @@ Not Unsafe Location queries
 | #          | #          | #          | #          | #          | #          | 0
 |------------|------------|------------|------------|------------|------------|
 
-          >>> time elapsed while executing plan_route(): 0.000160000000001
+          >>> time elapsed while executing plan_route(): 0.000153000000001
    HWA.agent_program(): Plan:
     ['Forward', 'Forward']
    HWA.agent_program(): Action: Forward
@@ -787,10 +787,10 @@ HWA.agent_program(): at time 13
          Stench13 & Breeze13 & ~Glitter13 & ~Bump13 & ~Scream13
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 1.68457
+          >>> time elapsed while making current location queries: 1.58738
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.103739
+          >>> time elapsed while making belief heading queries:0.099556
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 4692
        HWA.add_temporal_axioms()
@@ -830,10 +830,10 @@ HWA.agent_program(): at time 14
          Stench14 & ~Breeze14 & ~Glitter14 & ~Bump14 & ~Scream14
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 3)
-          >>> time elapsed while making current location queries: 1.787257
+          >>> time elapsed while making current location queries: 1.710832
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.116579
+          >>> time elapsed while making belief heading queries:0.107452
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 5047
        HWA.add_temporal_axioms()
@@ -849,7 +849,7 @@ HWA.agent_program(): at time 14
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 1.917025
+          >>> time elapsed while making OK location queries: 1.803344
 Find OK locations queries
   0                1                2                3                4                5                 time_step=14
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -868,7 +868,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.440681
+          >>> time elapsed while making unvisited locations queries: 1.354073
 Safe univisited locations:
   0           1           2           3           4           5            time_step=14
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -885,7 +885,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 0.000135
+          >>> time elapsed while executing plan_route(): 9.20000000022e-05
    HWA.agent_program(): Plan:
     ['Forward']
    HWA.agent_program(): Action: Forward
@@ -913,10 +913,10 @@ HWA.agent_program(): at time 15
          Stench15 & ~Breeze15 & ~Glitter15 & ~Bump15 & ~Scream15
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 4)
-          >>> time elapsed while making current location queries: 1.950411
+          >>> time elapsed while making current location queries: 1.818515
      HWA.infer_and_set_belief_heading()
         Current inferred heading: north
-          >>> time elapsed while making belief heading queries:0.117489
+          >>> time elapsed while making belief heading queries:0.11404
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 5365
        HWA.add_temporal_axioms()
@@ -932,7 +932,7 @@ HWA.agent_program(): at time 15
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 1.979685
+          >>> time elapsed while making OK location queries: 1.891849
 Find OK locations queries
   0                1                2                3                4                5                 time_step=15
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -951,7 +951,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.478898
+          >>> time elapsed while making unvisited locations queries: 1.292321
 Safe univisited locations:
   0           1           2           3           4           5            time_step=15
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -968,7 +968,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 0.000107
+          >>> time elapsed while executing plan_route(): 0.000104
    HWA.agent_program(): Plan:
     ['TurnRight', 'Forward']
    HWA.agent_program(): Action: TurnRight
@@ -996,10 +996,10 @@ HWA.agent_program(): at time 16
          Stench16 & ~Breeze16 & ~Glitter16 & ~Bump16 & ~Scream16
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 4)
-          >>> time elapsed while making current location queries: 2.052815
+          >>> time elapsed while making current location queries: 1.876593
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.50729
+          >>> time elapsed while making belief heading queries:0.474407
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 5624
        HWA.add_temporal_axioms()
@@ -1039,10 +1039,10 @@ HWA.agent_program(): at time 17
          ~Stench17 & ~Breeze17 & ~Glitter17 & ~Bump17 & ~Scream17
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 4)
-          >>> time elapsed while making current location queries: 2.119311
+          >>> time elapsed while making current location queries: 1.972501
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.536397
+          >>> time elapsed while making belief heading queries:0.490762
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 5942
        HWA.add_temporal_axioms()
@@ -1058,7 +1058,7 @@ HWA.agent_program(): at time 17
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 2.27624
+          >>> time elapsed while making OK location queries: 2.082468
 Find OK locations queries
   0                1                2                3                4                5                 time_step=17
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -1077,7 +1077,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.425084
+          >>> time elapsed while making unvisited locations queries: 1.311958
 Safe univisited locations:
   0           1           2           3           4           5            time_step=17
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -1094,7 +1094,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 9.10000000047e-05
+          >>> time elapsed while executing plan_route(): 0.000130999999996
    HWA.agent_program(): Plan:
     ['Forward']
    HWA.agent_program(): Action: Forward
@@ -1122,10 +1122,10 @@ HWA.agent_program(): at time 18
          ~Stench18 & Breeze18 & ~Glitter18 & ~Bump18 & ~Scream18
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (3, 4)
-          >>> time elapsed while making current location queries: 2.294962
+          >>> time elapsed while making current location queries: 2.083407
      HWA.infer_and_set_belief_heading()
         Current inferred heading: east
-          >>> time elapsed while making belief heading queries:0.564513
+          >>> time elapsed while making belief heading queries:0.521093
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 6297
        HWA.add_temporal_axioms()
@@ -1141,7 +1141,7 @@ HWA.agent_program(): at time 18
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 2.435258
+          >>> time elapsed while making OK location queries: 2.221646
 Find OK locations queries
   0                1                2                3                4                5                 time_step=18
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -1160,7 +1160,7 @@ Find OK locations queries
 
    HWA.agent_program(): Plan to visit safe square...
      HWA.update_unvisited_locations()
-          >>> time elapsed while making unvisited locations queries: 1.454312
+          >>> time elapsed while making unvisited locations queries: 1.241945
 Safe univisited locations:
   0           1           2           3           4           5            time_step=18
 |-----------|-----------|-----------|-----------|-----------|-----------|
@@ -1177,7 +1177,7 @@ Safe univisited locations:
 | #         | #         | #         | #         | #         | #         | 0
 |-----------|-----------|-----------|-----------|-----------|-----------|
 
-          >>> time elapsed while executing plan_route(): 0.000165000000003
+          >>> time elapsed while executing plan_route(): 0.000153999999995
    HWA.agent_program(): Plan:
     ['TurnRight', 'TurnRight', 'Forward', 'TurnLeft', 'Forward']
    HWA.agent_program(): Action: TurnRight
@@ -1205,10 +1205,10 @@ HWA.agent_program(): at time 19
          ~Stench19 & Breeze19 & ~Glitter19 & ~Bump19 & ~Scream19
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (3, 4)
-          >>> time elapsed while making current location queries: 2.469679
+          >>> time elapsed while making current location queries: 2.193707
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.444878
+          >>> time elapsed while making belief heading queries:0.41339
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 6615
        HWA.add_temporal_axioms()
@@ -1248,10 +1248,10 @@ HWA.agent_program(): at time 20
          ~Stench20 & Breeze20 & ~Glitter20 & ~Bump20 & ~Scream20
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (3, 4)
-          >>> time elapsed while making current location queries: 2.556024
+          >>> time elapsed while making current location queries: 2.372237
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.311956
+          >>> time elapsed while making belief heading queries:0.294649
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 7079
        HWA.add_temporal_axioms()
@@ -1291,10 +1291,10 @@ HWA.agent_program(): at time 21
          ~Stench21 & ~Breeze21 & ~Glitter21 & ~Bump21 & ~Scream21
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 4)
-          >>> time elapsed while making current location queries: 2.756957
+          >>> time elapsed while making current location queries: 2.505453
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.32253
+          >>> time elapsed while making belief heading queries:0.311719
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 7434
        HWA.add_temporal_axioms()
@@ -1334,10 +1334,10 @@ HWA.agent_program(): at time 22
          ~Stench22 & ~Breeze22 & ~Glitter22 & ~Bump22 & ~Scream22
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 4)
-          >>> time elapsed while making current location queries: 2.755395
+          >>> time elapsed while making current location queries: 2.620941
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.506444
+          >>> time elapsed while making belief heading queries:0.523044
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 7752
        HWA.add_temporal_axioms()
@@ -1377,10 +1377,10 @@ HWA.agent_program(): at time 23
          Stench23 & Breeze23 & Glitter23 & ~Bump23 & ~Scream23
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 3)
-          >>> time elapsed while making current location queries: 2.865339
+          >>> time elapsed while making current location queries: 2.787188
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.533094
+          >>> time elapsed while making belief heading queries:0.52729
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 8216
        HWA.add_temporal_axioms()
@@ -1396,7 +1396,7 @@ HWA.agent_program(): at time 23
      HWA.find_OK_locations()
        Ask if Wumpus is Alive:
          Is Wumpus Alive? : False
-          >>> time elapsed while making OK location queries: 3.08897
+          >>> time elapsed while making OK location queries: 3.026132
 Find OK locations queries
   0                1                2                3                4                5                 time_step=23
 |----------------|----------------|----------------|----------------|----------------|----------------|
@@ -1413,7 +1413,7 @@ Find OK locations queries
 | #              | #              | #              | #              | #              | #              | 0
 |----------------|----------------|----------------|----------------|----------------|----------------|
 
-          >>> time elapsed while executing plan_route(): 0.000207000000003
+          >>> time elapsed while executing plan_route(): 0.000176999999994
    HWA.agent_program(): Already have plan (with 7 actions left), continue executing...
    HWA.agent_program(): Plan:
     ['Grab', 'TurnRight', 'Forward', 'TurnLeft', 'Forward', 'Forward', 'Climb']
@@ -1442,10 +1442,10 @@ HWA.agent_program(): at time 24
          Stench24 & Breeze24 & ~Glitter24 & ~Bump24 & ~Scream24
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 3)
-          >>> time elapsed while making current location queries: 3.083801
+          >>> time elapsed while making current location queries: 3.096178
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.578414
+          >>> time elapsed while making belief heading queries:0.571537
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 8789
        HWA.add_temporal_axioms()
@@ -1485,10 +1485,10 @@ HWA.agent_program(): at time 25
          Stench25 & Breeze25 & ~Glitter25 & ~Bump25 & ~Scream25
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (2, 3)
-          >>> time elapsed while making current location queries: 3.313624
+          >>> time elapsed while making current location queries: 3.291483
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.415261
+          >>> time elapsed while making belief heading queries:0.412886
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 9362
        HWA.add_temporal_axioms()
@@ -1528,10 +1528,10 @@ HWA.agent_program(): at time 26
          Stench26 & ~Breeze26 & ~Glitter26 & ~Bump26 & ~Scream26
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 3)
-          >>> time elapsed while making current location queries: 3.497648
+          >>> time elapsed while making current location queries: 3.493784
      HWA.infer_and_set_belief_heading()
         Current inferred heading: west
-          >>> time elapsed while making belief heading queries:0.431952
+          >>> time elapsed while making belief heading queries:0.43877
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 9826
        HWA.add_temporal_axioms()
@@ -1571,10 +1571,10 @@ HWA.agent_program(): at time 27
          Stench27 & ~Breeze27 & ~Glitter27 & ~Bump27 & ~Scream27
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 3)
-          >>> time elapsed while making current location queries: 3.598376
+          >>> time elapsed while making current location queries: 3.636355
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.670184
+          >>> time elapsed while making belief heading queries:0.677788
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 10122
        HWA.add_temporal_axioms()
@@ -1614,10 +1614,10 @@ HWA.agent_program(): at time 28
          Stench28 & Breeze28 & ~Glitter28 & ~Bump28 & ~Scream28
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 2)
-          >>> time elapsed while making current location queries: 3.712765
+          >>> time elapsed while making current location queries: 3.718652
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.696175
+          >>> time elapsed while making belief heading queries:0.681094
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 10477
        HWA.add_temporal_axioms()
@@ -1657,10 +1657,10 @@ HWA.agent_program(): at time 29
          ~Stench29 & ~Breeze29 & ~Glitter29 & ~Bump29 & ~Scream29
      HWA.infer_and_set_belief_location()
         Current believed location (inferred): (1, 1)
-          >>> time elapsed while making current location queries: 3.799671
+          >>> time elapsed while making current location queries: 3.754028
      HWA.infer_and_set_belief_heading()
         Current inferred heading: south
-          >>> time elapsed while making belief heading queries:0.709036
+          >>> time elapsed while making belief heading queries:0.702305
      HWA.agent_program(): Prepare to add temporal axioms
          Number of clauses in KB before: 10795
        HWA.add_temporal_axioms()
@@ -1696,5 +1696,5 @@ Scores: <HybridWumpusAgent>=960
 
 DONE.
 number_of_clauses_over_epochs: [622, 977, 1441, 1759, 2018, 2336, 2691, 3155, 3473, 3732, 4050, 4368, 4686, 5041, 5359, 5618, 5936, 6291, 6609, 7073, 7428, 7746, 8210, 8783, 9356, 9820, 10116, 10471, 10789, 11048]
-belief_loc_query_times: [0.08970800000000001, 0.198523, 0.32393399999999994, 0.5290080000000001, 0.6538330000000001, 0.7795990000000002, 0.8257859999999999, 0.9735080000000007, 1.218027000000001, 1.3147780000000004, 1.50122, 1.4815430000000003, 1.5811610000000016, 1.6845700000000008, 1.7872570000000003, 1.9504109999999955, 2.0528150000000025, 2.1193110000000033, 2.294961999999998, 2.4696789999999993, 2.5560240000000007, 2.756957, 2.755395000000007, 2.8653389999999916, 3.0838010000000082, 3.3136240000000043, 3.497647999999998, 3.598376000000002, 3.7127650000000045, 3.7996710000000036]
+belief_loc_query_times: [0.091153, 0.20004299999999997, 0.3195570000000001, 0.4964559999999998, 0.6007980000000002, 0.681289, 0.782324, 0.9041079999999999, 1.0852569999999986, 1.1905640000000002, 1.265898, 1.386151, 1.4687230000000007, 1.5873799999999996, 1.710832, 1.8185149999999979, 1.8765929999999997, 1.9725010000000012, 2.083407000000001, 2.1937069999999963, 2.3722369999999984, 2.5054529999999957, 2.620941000000002, 2.7871880000000004, 3.0961779999999948, 3.2914829999999995, 3.493784000000005, 3.6363549999999947, 3.718652000000006, 3.7540280000000052]
 Final Scores: <HybridWumpusAgent>=960

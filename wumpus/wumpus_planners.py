@@ -256,7 +256,8 @@ class PlanShotProblem(search.Problem):
         Heuristic that will be used by search.astar_search()
         """
         "*** YOUR CODE HERE ***"
-        return 0
+        return min([manhattan_distance_with_heading(node.state, gs)
+                    for gs in self.possible_goal_states_so_you_can_shoot])
 
     def actions(self, state):
         """
